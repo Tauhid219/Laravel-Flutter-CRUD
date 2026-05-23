@@ -88,9 +88,9 @@ This document outlines the step-by-step development process of the Task Manager 
 * [x] Create `TaskProvider` to handle task list loading state, error catching, dynamic statistics calculation, and calling the CRUD APIs.
 
 ### Phase 10: Flutter Authentication Screens
-* [ ] Build a beautiful login screen using the `kider-1.0.0` design guidelines.
-* [ ] Build a registration screen with form validation.
-* [ ] Add automated navigation checks: redirects users to home if authenticated on app launch, otherwise to login.
+* [x] Build a beautiful login screen using the `kider-1.0.0` design guidelines.
+* [x] Build a registration screen with form validation.
+* [x] Add automated navigation checks: redirects users to home if authenticated on app launch, otherwise to login.
 
 ### Phase 11: Flutter Dashboard & Stats Screens
 * [ ] Build the main Task Dashboard.

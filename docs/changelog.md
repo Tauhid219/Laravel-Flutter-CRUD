@@ -37,3 +37,6 @@ All notable changes to this project will be documented in this file.
 - Created `AuthProvider` in `lib/providers/` to manage login, registration, logout, and token auto-login checks.
 - Created `TaskProvider` in `lib/providers/` to manage task list loading, dynamic stats, error catching, and API operations with optimistic updates for toggle and deletion.
 - Integrated `MultiProvider` in `lib/main.dart` wrapping the root widget, initialized custom Kider themes, and set up a basic home screen.
+- Developed `LoginView` in `lib/views/` using the Kider visual design guidelines, featuring complete form validation, error SnackBar feedback, and login logic.
+- Developed `RegisterView` in `lib/views/` using the Kider visual design guidelines, featuring complete form validation (name, email, password matching) and registration logic.
+- Implemented `AuthWrapper` in `lib/main.dart` to automatically handle local credential loading on app launch via `tryAutoLogin()`, dynamically routing to either the Login page or a temporary dashboard.
