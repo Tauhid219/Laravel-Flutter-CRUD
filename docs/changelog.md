@@ -21,3 +21,9 @@ All notable changes to this project will be documented in this file.
 - Created `resources/views/tasks/index.blade.php` containing statistics cards, task list table, creation/editing modals, and status toggle checks.
 - Defined routes in `routes/web.php` for index, store, update, toggle, and destroy actions.
 - Verified test suite passes successfully with all 25 unit and feature tests.
+- Created `AuthApiController` for register, login, and logout API endpoints with Sanctum bearer tokens.
+- Created `TaskApiController` for tasks API CRUD operations.
+- Implemented custom API request validation (`StoreTaskRequest`, `UpdateTaskRequest`).
+- Created `TaskResource` for structured, type-safe API responses.
+- Registered and protected API routes in `routes/api.php` under the `auth:sanctum` middleware.
+- Developed and executed a new integration test suite `TaskApiTest` (all 29 backend tests now passing).

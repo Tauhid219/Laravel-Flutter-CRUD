@@ -3,7 +3,7 @@
 This document outlines the step-by-step development process of the Task Manager CRUD application. We follow a modular, phase-by-phase execution strategy.
 
 ## Progress Overview
-* **Current Phase**: **Phase 6: Laravel API Controllers & Endpoints (Sanctum Authenticated)**
+* **Current Phase**: **Phase 7: Flutter Project Initialization & Dependencies**
 * **Status Markers**:
   * `[ ]` Pending
   * `[/]` In Progress
@@ -58,11 +58,11 @@ This document outlines the step-by-step development process of the Task Manager 
 * [x] Implement session feedback / toast alerts for CRUD success.
 
 ### Phase 6: Laravel API Controllers & Endpoints (Sanctum Authenticated)
-* [ ] Create `AuthApiController` for register, login, and logout API endpoints (returning Sanctum Bearer tokens).
-* [ ] Create `TaskApiController` to handle API CRUD requests.
-* [ ] Protect task routes in `routes/api.php` using the `auth:sanctum` middleware so users only access their own tasks.
-* [ ] Create custom Form Request validation (`StoreTaskRequest`, `UpdateTaskRequest`) for API safety.
-* [ ] Use Eloquent API Resources (`TaskResource`) to return consistent JSON formats.
+* [x] Create `AuthApiController` for register, login, and logout API endpoints (returning Sanctum Bearer tokens).
+* [x] Create `TaskApiController` to handle API CRUD requests.
+* [x] Protect task routes in `routes/api.php` using the `auth:sanctum` middleware so users only access their own tasks.
+* [x] Create custom Form Request validation (`StoreTaskRequest`, `UpdateTaskRequest`) for API safety.
+* [x] Use Eloquent API Resources (`TaskResource`) to return consistent JSON formats.
 
 ### Phase 7: Flutter Project Initialization & Dependencies
 * [ ] Create the Flutter project in `frontend/`: `flutter create --project-name flutter_practice .`.
