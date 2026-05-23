@@ -1,0 +1,7 @@
+# Global ignores
+.idea/
+.vscode/
+.gemini/
+.DS_Store
+Thumbs.db
+*.log
