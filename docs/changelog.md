@@ -11,3 +11,6 @@ All notable changes to this project will be documented in this file.
 - Installed Laravel Breeze scaffolding for Blade authentication.
 - Installed Laravel Sanctum API routing infrastructure and configured `bootstrap/app.php` routing.
 - Integrated `HasApiTokens` trait into `App\Models\User` model.
+- Created `Task` model and migrations with user association, category, priority, and due dates.
+- Defined Eloquent relationships between `User` and `Task` models.
+- Executed database migrations to create the `tasks` table.
