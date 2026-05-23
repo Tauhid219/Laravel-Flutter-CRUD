@@ -3,7 +3,7 @@
 This document outlines the step-by-step development process of the Task Manager CRUD application. We follow a modular, phase-by-phase execution strategy.
 
 ## Progress Overview
-* **Current Phase**: **Phase 7: Flutter Project Initialization & Dependencies**
+* **Current Phase**: **Phase 10: Flutter Authentication Screens**
 * **Status Markers**:
   * `[ ]` Pending
   * `[/]` In Progress
@@ -65,27 +65,27 @@ This document outlines the step-by-step development process of the Task Manager 
 * [x] Use Eloquent API Resources (`TaskResource`) to return consistent JSON formats.
 
 ### Phase 7: Flutter Project Initialization & Dependencies
-* [ ] Create the Flutter project in `frontend/`: `flutter create --project-name flutter_practice .`.
-* [ ] Add dependencies in `pubspec.yaml`:
+* [x] Create the Flutter project in `frontend/`: `flutter create --project-name flutter_practice .`.
+* [x] Add dependencies in `pubspec.yaml`:
   * `http: ^1.2.0` (REST API client)
   * `provider: ^6.1.2` (State management)
   * `shared_preferences: ^2.2.3` (Local persistent storage for token/user details)
   * `intl: ^0.19.0` (Date formatting)
-* [ ] Define target design system based on `kider-1.0.0` themes in Flutter (`ThemeData` configuration):
+* [x] Define target design system based on `kider-1.0.0` themes in Flutter (`ThemeData` configuration):
   * Primary color: `#FE5D37` (Vibrant Coral/Orange)
   * Light background: `#FFF5F3` (Soft Peach/Light Pink)
   * Dark text/primary: `#103741` (Deep Teal)
   * Headings: Playful styling mimicking 'Lobster Two'.
-* [ ] Structure the project directories: `lib/models`, `lib/services`, `lib/providers`, `lib/views`, `lib/widgets`.
+* [x] Structure the project directories: `lib/models`, `lib/services`, `lib/providers`, `lib/views`, `lib/widgets`.
 
 ### Phase 8: Flutter Models & API Services
-* [ ] Create the `User` and `Task` Dart models with `fromJson` and `toJson` serialization.
-* [ ] Create `ApiService` to make REST requests (Login, Register, Get Tasks, Add Task, Edit Task, Delete Task). Make sure the base URL is easily configurable.
-* [ ] Create `AuthService` to store and load token and user details from local storage using `shared_preferences`.
+* [x] Create the `User` and `Task` Dart models with `fromJson` and `toJson` serialization.
+* [x] Create `ApiService` to make REST requests (Login, Register, Get Tasks, Add Task, Edit Task, Delete Task). Make sure the base URL is easily configurable.
+* [x] Create `AuthService` to store and load token and user details from local storage using `shared_preferences`.
 
 ### Phase 9: Flutter State Management (Provider)
-* [ ] Create `AuthProvider` to manage login, registration, logout, and startup auth token checks.
-* [ ] Create `TaskProvider` to handle task list loading state, error catching, dynamic statistics calculation, and calling the CRUD APIs.
+* [x] Create `AuthProvider` to manage login, registration, logout, and startup auth token checks.
+* [x] Create `TaskProvider` to handle task list loading state, error catching, dynamic statistics calculation, and calling the CRUD APIs.
 
 ### Phase 10: Flutter Authentication Screens
 * [ ] Build a beautiful login screen using the `kider-1.0.0` design guidelines.

@@ -27,3 +27,13 @@ All notable changes to this project will be documented in this file.
 - Created `TaskResource` for structured, type-safe API responses.
 - Registered and protected API routes in `routes/api.php` under the `auth:sanctum` middleware.
 - Developed and executed a new integration test suite `TaskApiTest` (all 29 backend tests now passing).
+- Initialized a new Flutter project in `frontend/` folder.
+- Configured dependencies (`http`, `provider`, `shared_preferences`, `intl`) in `pubspec.yaml`.
+- Created custom theme config `lib/theme.dart` inspired by `kider-1.0.0` layout styling.
+- Structured subdirectories: `lib/models`, `lib/services`, `lib/providers`, `lib/views`, and `lib/widgets`.
+- Created Dart models `User` and `Task` in `lib/models/`.
+- Implemented `ApiService` in `lib/services/` to manage REST API integrations (registration, login, logout, task CRUD).
+- Implemented `AuthService` in `lib/services/` to store and manage authentication tokens and user profiles using `SharedPreferences`.
+- Created `AuthProvider` in `lib/providers/` to manage login, registration, logout, and token auto-login checks.
+- Created `TaskProvider` in `lib/providers/` to manage task list loading, dynamic stats, error catching, and API operations with optimistic updates for toggle and deletion.
+- Integrated `MultiProvider` in `lib/main.dart` wrapping the root widget, initialized custom Kider themes, and set up a basic home screen.
