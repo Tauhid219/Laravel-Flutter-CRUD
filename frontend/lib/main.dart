@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/task_provider.dart';
 import 'theme.dart';
+import 'views/dashboard_view.dart';
 import 'views/login_view.dart';
 
 void main() {
@@ -63,7 +64,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
         return Consumer<AuthProvider>(
           builder: (context, auth, _) {
             if (auth.isAuthenticated) {
-              return const PlaceholderDashboard();
+              return const DashboardView();
             } else {
               return const LoginView();
             }
@@ -74,87 +75,3 @@ class _AuthWrapperState extends State<AuthWrapper> {
   }
 }
 
-class PlaceholderDashboard extends StatelessWidget {
-  const PlaceholderDashboard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final auth = Provider.of<AuthProvider>(context);
-    final user = auth.user;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kider Dashboard'),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout_rounded, color: Color(0xFF103741)),
-            onPressed: () {
-              Provider.of<AuthProvider>(context, listen: false).logout();
-            },
-          ),
-        ],
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.sentiment_very_satisfied_rounded,
-                  size: 80,
-                  color: Color(0xFFFE5D37),
-                ),
-              ),
-              const SizedBox(height: 24),
-              Text(
-                'Welcome, ${user?.name ?? "User"}!',
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Email: ${user?.email ?? ""}',
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              const SizedBox(height: 32),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Authentication Successful!',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF103741),
-                          fontSize: 16,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'The Auth screens are fully integrated. In the next phase, we will implement the dynamic dashboard and task manager.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

@@ -40,3 +40,9 @@ All notable changes to this project will be documented in this file.
 - Developed `LoginView` in `lib/views/` using the Kider visual design guidelines, featuring complete form validation, error SnackBar feedback, and login logic.
 - Developed `RegisterView` in `lib/views/` using the Kider visual design guidelines, featuring complete form validation (name, email, password matching) and registration logic.
 - Implemented `AuthWrapper` in `lib/main.dart` to automatically handle local credential loading on app launch via `tryAutoLogin()`, dynamically routing to either the Login page or a temporary dashboard.
+- Created `DashboardView` in `lib/views/dashboard_view.dart` featuring a beautiful header greeting, daily progress bar, and dynamic statistics cards (Total, Completed, Pending).
+- Integrated `RefreshIndicator` into the dashboard to support Pull-to-Refresh task reloading.
+- Refactored `main.dart` routing to render the full `DashboardView` upon successful session authentication.
+- Developed `TaskCard` in `lib/widgets/task_card.dart` displaying task details with dynamic left priority color strips, category badges, due date calendar indicators, and swiping deletion behaviors.
+- Developed `AddEditTaskSheet` in `lib/widgets/add_edit_task_sheet.dart` for modal task creation and update actions with ChoiceChip selectors and calendar datepickers.
+- Updated `DashboardView` to use the `TaskCard` widget and added a `FloatingActionButton` to invoke the `AddEditTaskSheet`.

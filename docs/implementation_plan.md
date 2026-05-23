@@ -93,14 +93,14 @@ This document outlines the step-by-step development process of the Task Manager 
 * [x] Add automated navigation checks: redirects users to home if authenticated on app launch, otherwise to login.
 
 ### Phase 11: Flutter Dashboard & Stats Screens
-* [ ] Build the main Task Dashboard.
-* [ ] Create Kider-inspired top status banner displaying Task summary statistics (Total, Completed, Pending) dynamically.
-* [ ] Add Pull-to-Refresh functionality.
+* [x] Build the main Task Dashboard.
+* [x] Create Kider-inspired top status banner displaying Task summary statistics (Total, Completed, Pending) dynamically.
+* [x] Add Pull-to-Refresh functionality.
 
 ### Phase 12: Flutter Task CRUD Operations (List & Actions)
-* [ ] Create custom `TaskCard` widget with swipe-to-delete (`Dismissible`), priority color indicator, category tag, and completion checkbox toggle.
-* [ ] Create `AddEditTaskSheet` bottom-sheet modal with fields for title, description, category chip selection, priority dropdown, and due date calendar picker.
-* [ ] Integrate loading dialogs and error alerts via SnackBars.
+* [x] Create custom `TaskCard` widget with swipe-to-delete (`Dismissible`), priority color indicator, category tag, and completion checkbox toggle.
+* [x] Create `AddEditTaskSheet` bottom-sheet modal with fields for title, description, category chip selection, priority dropdown, and due date calendar picker.
+* [x] Integrate loading dialogs and error alerts via SnackBars.
 
 ### Phase 13: End-to-End Local Network Testing
 * [ ] Serve Laravel locally on all network interfaces: `php artisan serve --host=0.0.0.0 --port=8000`.
