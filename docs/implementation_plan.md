@@ -3,7 +3,7 @@
 This document outlines the step-by-step development process of the Task Manager CRUD application. We follow a modular, phase-by-phase execution strategy.
 
 ## Progress Overview
-* **Current Phase**: **Phase 4: Laravel Admin Panel Asset Integration (AdminLTE)**
+* **Current Phase**: **Phase 6: Laravel API Controllers & Endpoints (Sanctum Authenticated)**
 * **Status Markers**:
   * `[ ]` Pending
   * `[/]` In Progress
@@ -44,18 +44,18 @@ This document outlines the step-by-step development process of the Task Manager 
 * [x] Run migrations: `php artisan migrate`.
 
 ### Phase 4: Laravel Admin Panel Asset Integration (AdminLTE)
-* [ ] Copy the `dist/` and `plugins/` directories from `C:\Reza\Tauhid\Templates\AdminLTE-3.1.0` into Laravel's `backend/public/` folder.
-* [ ] Create a master layout view `resources/views/layouts/adminlte.blade.php` based on AdminLTE's `starter.html`.
-* [ ] Re-style Laravel Breeze login and registration views to match the AdminLTE design.
+* [x] Copy the `dist/` and `plugins/` directories from `C:\Reza\Tauhid\Templates\AdminLTE-3.1.0` into Laravel's `backend/public/` folder.
+* [x] Create a master layout view `resources/views/layouts/adminlte.blade.php` based on AdminLTE's `starter.html`.
+* [x] Re-style Laravel Breeze login and registration views to match the AdminLTE design.
 
 ### Phase 5: Laravel Web Dashboard (CRUD & Panel)
-* [ ] Create `TaskWebController` to handle CRUD operations on the web interface.
-* [ ] Build the web dashboard UI in `resources/views/tasks/index.blade.php` containing:
+* [x] Create `TaskWebController` to handle CRUD operations on the web interface.
+* [x] Build the web dashboard UI in `resources/views/tasks/index.blade.php` containing:
   * Stats cards (Total, Completed, Pending tasks).
   * Task creation form / modal.
   * Task list table with category badges, priority colors, and action buttons (Edit, Delete, Complete checkbox).
-* [ ] Define web routes in `routes/web.php` for index, store, update, toggle, and destroy.
-* [ ] Implement session feedback / toast alerts for CRUD success.
+* [x] Define web routes in `routes/web.php` for index, store, update, toggle, and destroy.
+* [x] Implement session feedback / toast alerts for CRUD success.
 
 ### Phase 6: Laravel API Controllers & Endpoints (Sanctum Authenticated)
 * [ ] Create `AuthApiController` for register, login, and logout API endpoints (returning Sanctum Bearer tokens).

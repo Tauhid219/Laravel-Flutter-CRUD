@@ -14,3 +14,10 @@ All notable changes to this project will be documented in this file.
 - Created `Task` model and migrations with user association, category, priority, and due dates.
 - Defined Eloquent relationships between `User` and `Task` models.
 - Executed database migrations to create the `tasks` table.
+- Copied AdminLTE 3.1.0 assets (`dist/`, `plugins/`) to Laravel's `public/` directory.
+- Created `resources/views/layouts/adminlte.blade.php` master layout.
+- Restyled `login.blade.php` and `register.blade.php` with AdminLTE's clean card designs.
+- Created `TaskWebController` for handling web CRUD actions.
+- Created `resources/views/tasks/index.blade.php` containing statistics cards, task list table, creation/editing modals, and status toggle checks.
+- Defined routes in `routes/web.php` for index, store, update, toggle, and destroy actions.
+- Verified test suite passes successfully with all 25 unit and feature tests.
