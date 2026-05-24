@@ -39,7 +39,7 @@ class ApiService {
       );
 
       final data = json.decode(response.body) as Map<String, dynamic>;
-      if (response.statusCode == 201) {
+      if (response.statusCode == 201 && data['success'] == true) {
         return {
           'success': true,
           'token': data['data']['token'] as String,
@@ -77,7 +77,7 @@ class ApiService {
       );
 
       final data = json.decode(response.body) as Map<String, dynamic>;
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 && data['success'] == true) {
         return {
           'success': true,
           'token': data['data']['token'] as String,
