@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import '../models/task_model.dart';
 
 class ApiService {
-  // Base API URL - Easily configurable (pointing to your localhost)
-  static const String baseUrl = 'http://localhost:8000/api';
+  // Base API URL - Easily configurable (pointing to your production cPanel subdomain)
+  static const String baseUrl = 'https://test.rezatauhid.top/api';
 
   // Helper to generate headers with optional authentication token
   Map<String, String> _getHeaders(String? token) {
