@@ -1,8 +1,3 @@
-# Disable ModSecurity/Imunify360 bot protection for API requests
-<IfModule mod_security.c>
-    SecRuleEngine Off
-</IfModule>
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
