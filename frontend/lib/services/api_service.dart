@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import '../models/task_model.dart';
 
 class ApiService {
-  // Base API URL - Easily configurable (pointing to your computer's local IP)
-  static const String baseUrl = 'http://192.168.0.240:8000/api';
+  // Base API URL - Easily configurable (pointing to your localhost)
+  static const String baseUrl = 'http://localhost:8000/api';
 
   // Helper to generate headers with optional authentication token
   Map<String, String> _getHeaders(String? token) {

@@ -19,13 +19,12 @@ class _AddEditTaskSheetState extends State<AddEditTaskSheet> {
   final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
   final _descController = TextEditingController();
+  final _categoryController = TextEditingController();
 
-  late String _selectedCategory;
   late String _selectedPriority;
   DateTime? _selectedDueDate;
   bool _isSaving = false;
 
-  final List<String> _categories = ['General', 'Work', 'Personal', 'Shopping', 'Study'];
   final List<String> _priorities = ['Low', 'Medium', 'High'];
 
   @override
@@ -34,11 +33,11 @@ class _AddEditTaskSheetState extends State<AddEditTaskSheet> {
     if (widget.task != null) {
       _titleController.text = widget.task!.title;
       _descController.text = widget.task!.description ?? '';
-      _selectedCategory = widget.task!.category;
+      _categoryController.text = widget.task!.category;
       _selectedPriority = widget.task!.priority;
       _selectedDueDate = widget.task!.dueDate;
     } else {
-      _selectedCategory = 'General';
+      _categoryController.text = 'General';
       _selectedPriority = 'Medium';
       _selectedDueDate = null;
     }
@@ -48,6 +47,7 @@ class _AddEditTaskSheetState extends State<AddEditTaskSheet> {
   void dispose() {
     _titleController.dispose();
     _descController.dispose();
+    _categoryController.dispose();
     super.dispose();
   }
 
@@ -114,7 +114,7 @@ class _AddEditTaskSheetState extends State<AddEditTaskSheet> {
           token,
           title: _titleController.text.trim(),
           description: _descController.text.trim(),
-          category: _selectedCategory,
+          category: _categoryController.text.trim(),
           priority: _selectedPriority,
           dueDate: _selectedDueDate,
         );
@@ -126,7 +126,7 @@ class _AddEditTaskSheetState extends State<AddEditTaskSheet> {
           {
             'title': _titleController.text.trim(),
             'description': _descController.text.trim(),
-            'category': _selectedCategory,
+            'category': _categoryController.text.trim(),
             'priority': _selectedPriority,
             'due_date': _selectedDueDate?.toIso8601String().split('T')[0],
           },
@@ -244,51 +244,23 @@ class _AddEditTaskSheetState extends State<AddEditTaskSheet> {
               ),
               const SizedBox(height: 20),
 
-              // Category Selector Header
-              const Text(
-                'Category',
-                style: TextStyle(
-                  color: AppColors.textDark,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+              // Category Text Field
+              TextFormField(
+                controller: _categoryController,
+                textCapitalization: TextCapitalization.words,
+                decoration: const InputDecoration(
+                  labelText: 'Category',
+                  prefixIcon: Icon(Icons.category_outlined, color: AppColors.secondary),
+                  hintText: 'e.g. Work, Personal, Shopping',
                 ),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return 'Please enter a category';
+                  }
+                  return null;
+                },
               ),
-              const SizedBox(height: 10),
-
-              // Category Chips List
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: _categories.map((cat) {
-                  final isSelected = _selectedCategory == cat;
-                  return ChoiceChip(
-                    label: Text(cat),
-                    selected: isSelected,
-                    selectedColor: AppColors.primary.withValues(alpha: 0.2),
-                    checkmarkColor: AppColors.primary,
-                    labelStyle: TextStyle(
-                      color: isSelected ? AppColors.primary : AppColors.textDark,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                    ),
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(
-                        color: isSelected ? AppColors.primary : Colors.transparent,
-                        width: 1.5,
-                      ),
-                    ),
-                    onSelected: (selected) {
-                      if (selected) {
-                        setState(() {
-                          _selectedCategory = cat;
-                        });
-                      }
-                    },
-                  );
-                }).toList(),
-              ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
 
               // Priority Selector Header
               const Text(

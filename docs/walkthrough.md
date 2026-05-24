@@ -73,3 +73,16 @@ Laravel-Flutter-CRUD/
    ```bash
    flutter run -d <device-id>
    ```
+
+---
+
+## 5. Profile & Settings Dashboard (AdminLTE Layout)
+
+The Profile page has been redesigned to integrate with the AdminLTE layout. The page consists of:
+1. **User Profile Card (Left)**: Renders the user's name, email, account registration date, and dynamic counts of their tasks (Total, Completed, Pending).
+2. **Forms Panel (Right)**: Contains Bootstrap 4 tabbed panels:
+   - **Profile Info**: Modifies the user's Name and Email.
+   - **Change Password**: Safely updates current password.
+   - **Delete Account**: Danger zone to permanently delete the account (requires password confirmation).
+3. **Dynamic UX**: Automatically switches tabs to active fields on validation errors or successful status messages using jQuery.
+

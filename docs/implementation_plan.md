@@ -111,3 +111,10 @@ This document outlines the step-by-step development process of the Task Manager 
 * [ ] Configure internet network permission in `android/app/src/main/AndroidManifest.xml`.
 * [ ] Update the Android application icon and display name.
 * [ ] Run compilation command: `flutter build apk --release`.
+
+### Phase 15: Laravel Admin Profile Layout Integration (AdminLTE)
+* [x] Replace `resources/views/profile/edit.blade.php` with a beautiful Bootstrap/AdminLTE grid layout.
+* [x] Structure left column with user info card, avatar, email, created date, and task statistics.
+* [x] Structure right column with tabbed interface for Profile Information, Change Password, and Delete Account.
+* [x] Implement jQuery-based auto-switching tabs on validation errors or success status alerts.
+* [x] Perform manual testing to verify profile edit, password update, and account deletion forms work flawlessly.

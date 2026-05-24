@@ -46,3 +46,16 @@ All notable changes to this project will be documented in this file.
 - Developed `TaskCard` in `lib/widgets/task_card.dart` displaying task details with dynamic left priority color strips, category badges, due date calendar indicators, and swiping deletion behaviors.
 - Developed `AddEditTaskSheet` in `lib/widgets/add_edit_task_sheet.dart` for modal task creation and update actions with ChoiceChip selectors and calendar datepickers.
 - Updated `DashboardView` to use the `TaskCard` widget and added a `FloatingActionButton` to invoke the `AddEditTaskSheet`.
+- Resolved route naming collisions where API route names overrode Web route names, redirecting web CRUD requests to API Sanctum authentication.
+- Configured customized favicon utilizing the AdminLTE template logo.
+- Replaced the default Laravel Breeze Tailwind-based profile views with a custom AdminLTE-based grid layout in `resources/views/profile/edit.blade.php`.
+- Designed left profile column including user profile photo placeholder, email, joined date, and dynamic task statistics.
+- Designed right profile column featuring a clean tabbed panel for editing name/email, updating password, and deleting the account.
+- Implemented Javascript logic to auto-switch tabs to show validation errors or success status messages dynamically.
+- Configured default user seeding in `DatabaseSeeder.php` to create an admin account (`admin@example.com` / `password`).
+- Replaced the preset category chips selection in the Flutter app's `AddEditTaskSheet` with a free-text `TextFormField` to match the web dashboard's typing behavior.
+
+
+
+
+

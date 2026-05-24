@@ -24,5 +24,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthApiController::class, 'logout']);
 
     // Task CRUD API routes
-    Route::apiResource('tasks', TaskApiController::class);
+    Route::apiResource('tasks', TaskApiController::class)->names([
+        'index' => 'api.tasks.index',
+        'store' => 'api.tasks.store',
+        'show' => 'api.tasks.show',
+        'update' => 'api.tasks.update',
+        'destroy' => 'api.tasks.destroy',
+    ]);
 });
