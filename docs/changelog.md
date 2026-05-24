@@ -54,8 +54,9 @@ All notable changes to this project will be documented in this file.
 - Implemented Javascript logic to auto-switch tabs to show validation errors or success status messages dynamically.
 - Configured default user seeding in `DatabaseSeeder.php` to create an admin account (`admin@example.com` / `password`).
 - Replaced the preset category chips selection in the Flutter app's `AddEditTaskSheet` with a free-text `TextFormField` to match the web dashboard's typing behavior.
-
-
-
-
-
+- Configured and deployed the Laravel backend to cPanel at `test.rezatauhid.top`.
+- Established a public symbolic link pointing from the subdomain folder to the Laravel `public` directory.
+- Setup and configured local Composer (`composer.phar`) on cPanel to bypass memory/system restrictions.
+- Executed production database migrations and seeded the live database.
+- Updated the Flutter mobile application's API `baseUrl` to point to the live cPanel production subdomain (`https://test.rezatauhid.top/api`).
+- Added a detailed cPanel manual deployment guide in `docs/cpanel_deployment_plan.md`.

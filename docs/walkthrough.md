@@ -86,3 +86,31 @@ The Profile page has been redesigned to integrate with the AdminLTE layout. The 
    - **Delete Account**: Danger zone to permanently delete the account (requires password confirmation).
 3. **Dynamic UX**: Automatically switches tabs to active fields on validation errors or successful status messages using jQuery.
 
+---
+
+## 6. cPanel Production Deployment
+
+The backend application is hosted on cPanel at `https://test.rezatauhid.top`. 
+
+### Production Directory Map
+*   **Subdomain Web Root**: `/home/rezatauh/test.rezatauhid.top` (Symlinked to the public directory of the repo).
+*   **Repository Location**: `/home/rezatauh/Laravel-Flutter-CRUD/`
+*   **Laravel Public Folder**: `/home/rezatauh/Laravel-Flutter-CRUD/backend/public/`
+
+### Manual Deployment Steps
+Whenever you make updates to the codebase (such as updating the Flutter frontend APIs or Laravel backend routes):
+1.  Push your changes from your local machine to GitHub:
+    ```bash
+    git add .
+    git commit -m "Your changes"
+    git push origin main
+    ```
+2.  Log into your cPanel Terminal or connect via SSH, and run:
+    ```bash
+    cd ~/Laravel-Flutter-CRUD
+    git pull
+    cd backend
+    php -d allow_url_fopen=On ~/composer.phar install --no-dev --optimize-autoloader
+    php artisan migrate --force
+    php artisan optimize
+    ```
